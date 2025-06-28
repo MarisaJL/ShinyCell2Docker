@@ -1,18 +1,19 @@
-library("templateDockerShinyPkg")
+library("Seurat")
+library("ShinyCell2")
 
 input_folder <- Sys.getenv("SHINY_INPUT_DIR")
 output_folder <- Sys.getenv("SHINY_OUTPUT_DIR")
 
-# read input data if it is present in the expected location, otherwise use 
-# the old faithful data
+# read input data if it is present in the expected location, otherwise
 if ((input_folder == '' || !dir.exists(input_folder))) {
-  x <- faithful$waiting
+  
 } else {
   data_obj_path <- file.path(input_folder, "data.rds")
   if (!file.exists(data_obj_path)) {
     x <- faithful$waiting
   } else {
-    x <- readRDS(data_obj_path)
+    seu <- readRDS(data_obj_path)
+    scConf <- createConfig(seu)
   }
 }
 
