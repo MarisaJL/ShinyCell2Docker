@@ -22,7 +22,7 @@ RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install
     Rscript -e "install.packages('RColorBrewer')" && \
     Rscript -e "install.packages('Seurat')" && \
     Rscript -e "install.packages('Signac')" && \
-    Rscript -e "devtools::install_github("GreenleafLab/ArchR")" && \
+    Rscript -e "devtools::install_github('GreenleafLab/ArchR', ref='master', repos = BiocManager::repositories())" && \
     Rscript -e "reticulate::py_install('anndata')" && \
     # install the package itself
     Rscript -e "devtools::install_github('the-ouyang-lab/ShinyCell2')"
