@@ -9,23 +9,23 @@ ENV SHINY_OUTPUT_DIR="/shiny_output"
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install.packages('BiocManager')" && \
     Rscript -e "BiocManager::install(ask=FALSE)" && \
     # install required packages
-    Rscript -e "install.packages('data.table')"
-    Rscript -e "install.packages('Matrix')"
-    Rscript -e "install.packages('hdf5r')"
-    Rscript -e "install.packages('reticulate')"
-    Rscript -e "install.packages('R.utils')"
-    Rscript -e "install.packages('ggplot2')"
-    Rscript -e "install.packages('gridExtra')"
-    Rscript -e "install.packages('glue')"
-    Rscript -e "install.packages('readr')"
-    Rscript -e "install.packages('future')"
-    Rscript -e "install.packages('RColorBrewer')"
-    Rscript -e "install.packages('Seurat')"
-    Rscript -e "install.packages('Signac')"
-    Rscript -e "devtools::install_github("GreenleafLab/ArchR")"
-    Rscript -e "reticulate::py_install('anndata')"
+    Rscript -e "install.packages('data.table')" && \
+    Rscript -e "install.packages('Matrix')" && \
+    Rscript -e "install.packages('hdf5r')" && \
+    Rscript -e "install.packages('reticulate')" && \
+    Rscript -e "install.packages('R.utils')" && \
+    Rscript -e "install.packages('ggplot2')" && \
+    Rscript -e "install.packages('gridExtra')" && \
+    Rscript -e "install.packages('glue')" && \
+    Rscript -e "install.packages('readr')" && \
+    Rscript -e "install.packages('future')" && \
+    Rscript -e "install.packages('RColorBrewer')" && \
+    Rscript -e "install.packages('Seurat')" && \
+    Rscript -e "install.packages('Signac')" && \
+    Rscript -e "devtools::install_github("GreenleafLab/ArchR")" && \
+    Rscript -e "reticulate::py_install('anndata')" && \
     # install the package itself
-    Rscript -e "devtools::install_github("the-ouyang-lab/ShinyCell2")"
+    Rscript -e "devtools::install_github('the-ouyang-lab/ShinyCell2')"
 
 USER root
 
