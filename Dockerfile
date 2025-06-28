@@ -9,7 +9,7 @@ ENV SHINY_OUTPUT_DIR="/shiny_output"
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install.packages('BiocManager')" && \
     Rscript -e "BiocManager::install(ask=FALSE)" && \
     # install the package itself
-    Rscript -e "BiocManager::install('csoneson/templateDockerShinyPkg')"
+    Rscript -e "devtools::install_github("the-ouyang-lab/ShinyCell2")"
 
 USER root
 
