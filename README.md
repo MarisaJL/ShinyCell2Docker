@@ -1,3 +1,9 @@
+# ShinyCell2 Docker Container
+
+This is the Docker container for ShinyCell2.
+
+ShinyCell2 is an enhanced R package for creating interactive, lightweight, and shareable web applications to explore single-cell multi-omics and spatial transcriptomics data [(Bei Jun Chen et al., 2025)](https://www.biorxiv.org/content/10.1101/2025.04.22.650045v1).
+
 # Goal
 
 The purpose of this repository is to provide a template for dockerizing an existing [shiny application](https://shiny.posit.co/), which handles an input folder containing (non-obligatory)
